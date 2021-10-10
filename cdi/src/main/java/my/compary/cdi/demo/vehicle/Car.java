@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.logging.Logger;
 
-@ApplicationScoped
+//@ApplicationScoped
 public class Car implements Vehicle {
 
     private static final Logger LOGGER = Logger.getLogger(Car.class.getName());

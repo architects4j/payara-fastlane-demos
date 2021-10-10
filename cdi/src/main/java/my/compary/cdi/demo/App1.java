@@ -16,6 +16,8 @@ public class App1 {
 
             Car car = container.select(Car.class).get();
             car.move();
+
+            System.out.println("Is the same vehicle? " + car.equals(vehicle));
         }
     }
 }
