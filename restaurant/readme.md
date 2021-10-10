@@ -16,10 +16,17 @@ This will create an executable jar file **restaurant-microbundle.jar** within th
 
 To execute the tests
 ```
-    curl --location --request POST 'http://localhost:8080/restaurants' \
+curl --location --request POST 'http://localhost:8080/restaurants' \
 --header 'Content-Type: application/json' \
---data-raw '{"name": "Jose", "description": "This is a description", "type": "BEVERAGE", "expires": "2030-12-03"}'   
+--data-raw '{"name": "water", "description": "the liquid that descends from the clouds as rain, forms streams, lakes, and seas", "type": "BEVERAGE", "expires": "2030-12-03"}'   
 ```
+
+```
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "coconut-water", "description": "Coconut water is the clear liquid inside coconuts. In early development, it serves as a suspension for the endosperm of the coconut during the nuclear phase of development.", "type": "BEVERAGE", "expires": "2030-12-03"}'
+```
+
 ## Specification examples
 
 By default, there is always the creation of a JAX-RS application class to define the path on which the JAX-RS endpoints are available.
