@@ -9,12 +9,9 @@ import jakarta.validation.constraints.Past;
 import javax.json.bind.annotation.JsonbVisibility;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.UUID;
 
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
 public class Item {
-
-    private String id;
 
     @NotNull
     @Min(value = 5, message = "The item name cannot be so short")
@@ -34,22 +31,12 @@ public class Item {
     private LocalDate expires;
 
 
-    public void checkId() {
-        if (Objects.isNull(id)) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
-
     public void update(Item item, RestaurantRepository repository) {
         this.description = item.description;
         this.expires = item.expires;
         this.type = item.type;
         this.name = item.name;
         repository.save(item);
-    }
-
-    public String getId() {
-        return id;
     }
 
     public String getName() {
@@ -77,23 +64,21 @@ public class Item {
             return false;
         }
         Item item = (Item) o;
-        return Objects.equals(getId(), item.getId());
+        return Objects.equals(name, item.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return Objects.hashCode(this.name);
     }
 
     @Override
     public String toString() {
         return "Item{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", type=" + type +
                 ", expires=" + expires +
                 '}';
     }
-
 }
