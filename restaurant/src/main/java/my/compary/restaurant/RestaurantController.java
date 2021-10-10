@@ -13,13 +13,18 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import java.util.Collection;
-import java.util.List;
 
 @RequestScoped
 @Path("restaurants")
 public class RestaurantController {
 
     private RestaurantRepository repository;
+
+    /**
+     * @Deprecated CDI only
+     */
+    RestaurantController() {
+    }
 
     @Inject
     RestaurantController(RestaurantRepository repository) {
