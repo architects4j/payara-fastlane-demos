@@ -1,6 +1,6 @@
 package my.compary.cdi.demo;
 
-import my.compary.cdi.demo.team.MyServiceSample;
+import my.compary.cdi.demo.injection.MyServiceSample;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;

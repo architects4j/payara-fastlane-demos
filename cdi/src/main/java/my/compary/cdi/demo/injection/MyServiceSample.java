@@ -1,4 +1,4 @@
-package my.compary.cdi.demo.team;
+package my.compary.cdi.demo.injection;
 
 public class MyServiceSample {
 
