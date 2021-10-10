@@ -6,10 +6,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 
+import javax.json.bind.annotation.JsonbVisibility;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
+@JsonbVisibility(FieldPropertyVisibilityStrategy.class)
 public class Item {
 
     private String id;
