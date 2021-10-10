@@ -1,6 +1,5 @@
 package my.compary.cdi.demo.producer;
 
-import javax.enterprise.inject.Disposes;
 import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.util.logging.Logger;
