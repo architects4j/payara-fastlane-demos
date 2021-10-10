@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.restaurant.infra;
 
 import javax.json.bind.config.PropertyVisibilityStrategy;
 import java.lang.reflect.Field;

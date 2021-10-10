@@ -1,6 +1,8 @@
 package my.compary.restaurant;
 
 
+import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
+
 import javax.json.bind.annotation.JsonbVisibility;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

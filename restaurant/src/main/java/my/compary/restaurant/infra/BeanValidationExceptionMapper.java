@@ -1,4 +1,4 @@
-package my.compary.restaurant;
+package my.compary.restaurant.infra;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -7,7 +7,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class MyExceptionMapper
+public class BeanValidationExceptionMapper
         implements ExceptionMapper<ConstraintViolationException> {
 
     @Override
