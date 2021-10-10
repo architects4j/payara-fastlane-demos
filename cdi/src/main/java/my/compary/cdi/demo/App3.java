@@ -1,9 +1,10 @@
 package my.compary.cdi.demo;
 
+import my.compary.cdi.demo.producer.NumberLogger;
+
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 import java.math.BigDecimal;
-import java.util.logging.Logger;
 
 public class App3 {
 
@@ -11,8 +12,8 @@ public class App3 {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             BigDecimal value = container.select(BigDecimal.class).get();
-            Logger logger = container.select(Logger.class).get();
-            logger.info("The BigDecimal value is " + value);
+            NumberLogger logger = container.select(NumberLogger.class).get();
+            logger.log(value);
         }
     }
 }
