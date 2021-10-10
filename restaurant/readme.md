@@ -14,9 +14,11 @@ This will create an executable jar file **restaurant-microbundle.jar** within th
     java -jar target/restaurant-microbundle.jar
 ```
 
-To launch the test page, open your browser at the following URL
+To execute the tests
 ```
-    http://localhost:8080/index.html  
+    curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "Jose", "description": "This is a description", "type": "BEVERAGE", "expires": "2030-12-03"}'   
 ```
 ## Specification examples
 
@@ -25,3 +27,4 @@ Also, a simple Hello world endpoint is created, have a look at the class **Hello
 More information on MicroProfile can be found [here](https://microprofile.io/)
 
 
+## Samples

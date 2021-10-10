@@ -36,6 +36,12 @@ public class RestaurantController {
     public Collection<Item> getAll() {
         return repository.getAll();
     }
+    @GET
+    @Path("{id}")
+    public Item findById(@PathParam("id")String id) {
+        return this.repository.findById(id).orElseThrow(
+                () -> new WebApplicationException("There is not item with the id " + id, Response.Status.NOT_FOUND));
+    }
 
     @POST
     public Response insert(@Valid Item item) {
