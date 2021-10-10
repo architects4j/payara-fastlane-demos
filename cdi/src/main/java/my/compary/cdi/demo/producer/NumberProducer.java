@@ -16,7 +16,7 @@ class NumberProducer {
         return new BigDecimal(nextDouble);
     }
 
-    public void distroy(@Disposes BigDecimal value) {
+    public void destroy(@Disposes BigDecimal value) {
         System.out.println("We don't need this number anymore: " + value);
     }
 }
