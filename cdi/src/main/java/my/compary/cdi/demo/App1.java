@@ -1,6 +1,7 @@
 package my.compary.cdi.demo;
 
 import my.compary.cdi.demo.injection.MyServiceSample;
+import my.compary.cdi.demo.vehicle.Car;
 import my.compary.cdi.demo.vehicle.Vehicle;
 
 import javax.enterprise.inject.se.SeContainer;
@@ -12,6 +13,9 @@ public class App1 {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             Vehicle vehicle = container.select(Vehicle.class).get();
             vehicle.move();
+
+            Car car = container.select(Car.class).get();
+            car.move();
         }
     }
 }
