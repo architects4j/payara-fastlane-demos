@@ -1,6 +1,7 @@
 package my.compary.cdi.demo.animal;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Any;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ public class AnimalService {
     private Animal animal;
 
     @Inject
+    @Any
     private Instance<Animal> animals;
 
     public void dog() {
