@@ -28,12 +28,6 @@
             <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
-      <dependency>
-        <groupId>org.javamoney.moneta</groupId>
-        <artifactId>moneta-core</artifactId>
-        <version>1.4.2</version>
-      </dependency>
-
     </dependencies>
     <build>
         <finalName>restaurant</finalName>
