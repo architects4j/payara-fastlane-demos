@@ -1,9 +1,8 @@
 package my.compary.restaurant;
 
-import jakarta.validation.Valid;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
