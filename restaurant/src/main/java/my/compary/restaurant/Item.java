@@ -7,4 +7,6 @@ public class Item {
     private String description;
 
     private ItemType type;
+
+
 }
