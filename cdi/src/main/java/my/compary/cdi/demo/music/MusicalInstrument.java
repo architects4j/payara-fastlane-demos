@@ -1,4 +1,4 @@
-package my.compary.cdi.demo.animal;
+package my.compary.cdi.demo.music;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -14,6 +14,6 @@ import javax.inject.Qualifier;
 @Qualifier
 @Retention(RUNTIME)
 @Target({TYPE, METHOD, FIELD, PARAMETER})
-public @interface AnimalFilter {
-    AnimalType value();
+public @interface MusicalInstrument {
+    InstrumentType value();
 }
