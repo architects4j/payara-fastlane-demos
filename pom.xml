@@ -8,5 +8,6 @@
     <packaging>pom</packaging>
   
   <modules>
+    <module>cdi</module>
   </modules>
 </project>
