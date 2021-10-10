@@ -5,13 +5,12 @@ import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
 
 import javax.json.bind.annotation.JsonbVisibility;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
@@ -31,6 +30,10 @@ public class Item {
     @Future(message = "you're not enable to insert an expired item")
     @NotNull
     private LocalDate expires;
+
+    @NotNull
+    @Min(value = 1, message = "There should be at least one ingredient")
+    private List<Ingredient> ingredients;
 
 
     public void update(Item item, RestaurantRepository repository) {
