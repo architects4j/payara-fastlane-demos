@@ -12,6 +12,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
+import java.util.Collection;
 import java.util.List;
 
 @RequestScoped
@@ -27,7 +28,7 @@ public class RestaurantController {
 
     //TODO don't worried about pagination
     @GET
-    public List<Item> getAll() {
+    public Collection<Item> getAll() {
         return repository.getAll();
     }
 

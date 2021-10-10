@@ -1,10 +1,10 @@
 package my.compary.restaurant;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 
 public interface RestaurantRepository {
-    List<Item> getAll();
+    Collection<Item> getAll();
 
     Item save(Item item);
 
