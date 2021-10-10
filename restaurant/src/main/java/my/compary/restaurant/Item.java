@@ -4,31 +4,31 @@ package my.compary.restaurant;
 import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
 
 import javax.json.bind.annotation.JsonbVisibility;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @JsonbVisibility(FieldPropertyVisibilityStrategy.class)
 public class Item {
 
-    @NotNull
-    @Min(value = 5, message = "The item name cannot be so short")
-    @Max(value = 60, message = "The item name cannot be so mongols")
+    @NotBlank
+    @Size(min = 3, max = 10, message = "The name size should be between 3 and 10")
     private String name;
 
     @NotBlank
-    @Min(value = 10, message = "The item description cannot be so short")
-    @Max(value = 100, message = "The item description cannot be so mongols")
+    @Size(min = 10, max = 100, message = "The description should be between 10 and 100")
     private String description;
 
     @NotNull
     private ItemType type;
 
-    @Past(message = "you're not enable to insert an expired item")
+    @Future(message = "you're not enable to insert an expired item")
     @NotNull
     private LocalDate expires;
 
