@@ -1,4 +1,4 @@
-# payara-fastlane-demos
+# Payara Micro & MicroProfile Fundamentals (PMMPF)
 
 In this course, you will learn the fundamentals of how to develop modern cloud-native microservices with Payara Micro and MicroProfile.
 
