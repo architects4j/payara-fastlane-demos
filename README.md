@@ -46,26 +46,26 @@ By the end of the course, you should be able to meet the following objectives:
 * Getting started with Payara Micro
 * Injecting dependencies into microservices with Contexts and Dependency Injection
 * Create a RESTful web service
-* Create a REST service with JAX-RS and JSON-B
-* Use REST client
-* Consume a RESTful web service with JSON-B and JSON-P
-* Document and filter RESTful APIs by using OpenAPI
-* REactive service: Consume RESTful web services asynchronously
+	* Create a REST service with JAX-RS and JSON-B
+	* Use REST client
+	* Consume a RESTful web service with JSON-B and JSON-P
+	* Document and filter RESTful APIs by using OpenAPI
+	* REactive service: Consume RESTful web services asynchronously
 * Configuration
-* Static configuration injection using MicroProfile Config
+  * Static configuration injection using MicroProfile Config
 * Fault tolerance
 * Observability
-* MicroProfile Metrics by using Jaeger and MicroProfile OpenTracing
-* MicroProfile Health Check
+  * MicroProfile Metrics by using Jaeger and MicroProfile OpenTracing
+  * MicroProfile Health Check
 * Security
-* Authentication and authorization
-* Control user and role access by using MicroProfile JSON Web Tokens (JWT)
-* Validate user input by using bean validation
+  * Authentication and authorization
+  * Control user and role access by using MicroProfile JSON Web Tokens (JWT)
+  * Validate user input by using bean validation
 * Persistence
-* Persist data to a database by using Java Persistence API (JPA)
-* Caching HTTP session data by using JCache and MicroStream
-* Persist data by using MicroStream native object graph persistence
+  * Persist data to a database by using Java Persistence API (JPA)
+  * Caching HTTP session data by using JCache and MicroStream
+  * Persist data by using MicroStream native object graph persistence
 * Testing microservices
-* Build and deployment of microservices
-* Exercises with coding
-* Answering your individual questions
+  * Build and deployment of microservices
+  * Exercises with coding
+  * Answering your individual questions
