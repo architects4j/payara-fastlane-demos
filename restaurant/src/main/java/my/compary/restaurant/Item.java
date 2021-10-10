@@ -7,6 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 
 import java.util.Locale;
+import java.util.Objects;
+import java.util.UUID;
 
 public class Item {
 
@@ -29,6 +31,12 @@ public class Item {
     private Locale expires;
 
 
+    public void checkId() {
+        if (Objects.isNull(id)) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
+
     public void update(Item item, RestaurantRepository repository) {
         this.description = item.description;
         this.expires = item.expires;
@@ -36,4 +44,53 @@ public class Item {
         this.name = item.name;
         repository.save(item);
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ItemType getType() {
+        return type;
+    }
+
+    public Locale getExpires() {
+        return expires;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Item item = (Item) o;
+        return Objects.equals(getId(), item.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", type=" + type +
+                ", expires=" + expires +
+                '}';
+    }
+
 }
