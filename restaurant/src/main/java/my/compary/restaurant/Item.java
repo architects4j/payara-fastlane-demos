@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 
-import java.util.Locale;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -28,7 +28,8 @@ public class Item {
     private ItemType type;
 
     @Past(message = "you're not enable to insert an expired item")
-    private Locale expires;
+    @NotNull
+    private LocalDate expires;
 
 
     public void checkId() {
@@ -61,7 +62,7 @@ public class Item {
         return type;
     }
 
-    public Locale getExpires() {
+    public LocalDate getExpires() {
         return expires;
     }
 
