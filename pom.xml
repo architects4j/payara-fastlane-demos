@@ -9,5 +9,6 @@
   
   <modules>
     <module>cdi</module>
+    <module>restaurant</module>
   </modules>
 </project>
