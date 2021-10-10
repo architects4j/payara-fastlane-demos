@@ -14,18 +14,40 @@ This will create an executable jar file **restaurant-microbundle.jar** within th
     java -jar target/restaurant-microbundle.jar
 ```
 
-To execute the tests
-```
-curl --location --request POST 'http://localhost:8080/restaurants' \
---header 'Content-Type: application/json' \
---data-raw '{"name": "water", "description": "the liquid that descends from the clouds as rain, forms streams, lakes, and seas", "type": "BEVERAGE", "expires": "2030-12-03"}'   
-```
+To execute the tests:
 
 ```
 curl --location --request POST 'http://localhost:8080/restaurants' \
 --header 'Content-Type: application/json' \
+--data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2030-12-03"}'   
+
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
 --data-raw '{"name": "coconut-water", "description": "Coconut water is the clear liquid inside coconuts. In early development, it serves as a suspension for the endosperm of the coconut during the nuclear phase of development.", "type": "BEVERAGE", "expires": "2030-12-03"}'
+
+
+curl --location --request GET 'http://localhost:8080/restaurants/water'
+
+curl --location --request GET 'http://localhost:8080/restaurants'
 ```
+
+Validations tests:
+
+```
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2030-12-03"}'
+
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2000-12-03"}'
+
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "w", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2025-12-03"}'
+```
+
+
 
 ## Specification examples
 
