@@ -9,4 +9,6 @@ public interface RestaurantRepository {
     Item save(Item item);
 
     Optional<Item> findById(String id);
+
+    void deleteById(String id);
 }

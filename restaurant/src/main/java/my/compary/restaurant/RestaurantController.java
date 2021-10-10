@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -47,5 +48,11 @@ public class RestaurantController {
         return databaseItem;
     }
 
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") String id){
+        this.repository.deleteById(id);
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
 
 }
