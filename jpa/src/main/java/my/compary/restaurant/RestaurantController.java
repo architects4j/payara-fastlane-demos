@@ -86,16 +86,6 @@ public class RestaurantController {
                 .build();
     }
 
-    @PUT
-    @Path("{id}")
-    public Item update(@PathParam("id") String id, @Valid Item item) {
-        Item databaseItem = repository.findById(id)
-                .orElseThrow(
-                        () -> new WebApplicationException("There is no item with the id " + id, Response.Status.NOT_FOUND));
-        databaseItem.update(item, repository);
-        return databaseItem;
-    }
-
     @DELETE
     @Path("{id}")
     @Operation(summary = "Delete an item by ID", description = "Delete an item by ID")
