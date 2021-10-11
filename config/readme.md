@@ -22,6 +22,9 @@ To launch the test page, open your browser at the following URL
     http://localhost:8080/index.html  
 ```
 
+```
+java -Dinjected.value="New Value" -jar target/config-microbundle.jar
+``
 
 ## Specification examples
 
