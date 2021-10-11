@@ -17,5 +17,6 @@
     <module>jpa</module>
     <module>health</module>
     <module>microstream</module> 
+    <module>nosql</module> 
   </modules>
 </project>
