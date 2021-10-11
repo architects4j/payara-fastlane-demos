@@ -16,5 +16,6 @@
     <module>config</module>
     <module>jpa</module>
     <module>health</module>
+    <module>microstream</module> 
   </modules>
 </project>
