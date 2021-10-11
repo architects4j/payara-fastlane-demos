@@ -43,16 +43,6 @@ public class Item {
     @Schema(required = true, name = "ingredients", description = "The ingredients")
     private List<Ingredient> ingredients;
 
-
-    public void update(Item item, RestaurantRepository repository) {
-        this.description = item.description;
-        this.expires = item.expires;
-        this.type = item.type;
-        this.name = item.name;
-        this.ingredients = item.ingredients;
-        repository.save(item);
-    }
-
     public String getName() {
         return name;
     }
