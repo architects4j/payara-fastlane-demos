@@ -46,7 +46,7 @@ public class RestaurantController {
     @APIResponse(responseCode = "500", description = "Server unavailable")
     @APIResponse(responseCode = "200", description = "The items")
     @Tag(name = "BETA", description = "This API is currently in beta state")
-    @APIResponse(description = "The episodes",
+    @APIResponse(description = "The items",
             responseCode = "200",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
                     schema = @Schema(implementation = Collection.class,
@@ -75,7 +75,7 @@ public class RestaurantController {
 
     @POST
     @Operation(summary = "Insert an item", description = "Insert an Item")
-    @APIResponse(responseCode = "201", description = "When creates an episode")
+    @APIResponse(responseCode = "201", description = "When creates an item")
     @APIResponse(responseCode = "500", description = "Server unavailable")
     @Tag(name = "BETA", description = "This API is currently in beta state")
     public Response insert(@RequestBody(description = "Create a new Item.",
