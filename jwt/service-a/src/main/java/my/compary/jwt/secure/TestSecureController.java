@@ -46,6 +46,4 @@ public class TestSecureController {
                 .buildGet().invoke();
         return String.format("Claim value within JWT of 'custom-value' : %s", response.readEntity(String.class));
     }
-
-
 }
