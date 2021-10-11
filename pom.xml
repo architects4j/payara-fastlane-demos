@@ -15,5 +15,6 @@
     <module>jwt</module>
     <module>config</module>
     <module>jpa</module>
+    <module>health</module>
   </modules>
 </project>
