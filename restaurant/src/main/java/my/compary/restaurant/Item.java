@@ -17,17 +17,17 @@ import java.util.Objects;
 public class Item {
 
     @NotBlank
-    @Size(min = 3, max = 10, message = "The name size should be between 3 and 10")
+    @Size(min = 3, max = 10, message = "The name size should be between 3 and 10 chars")
     private String name;
 
     @NotBlank
-    @Size(min = 10, max = 100, message = "The description should be between 10 and 100")
+    @Size(min = 10, max = 100, message = "The description should be between 10 and 100 chars")
     private String description;
 
     @NotNull
     private ItemType type;
 
-    @Future(message = "you're not enable to insert an expired item")
+    @Future(message = "It is not possible to save an expired item")
     @NotNull
     private LocalDate expires;
 

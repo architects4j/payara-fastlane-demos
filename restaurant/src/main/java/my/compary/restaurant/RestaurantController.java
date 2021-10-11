@@ -39,7 +39,7 @@ public class RestaurantController {
     @Path("{id}")
     public Item findById(@PathParam("id")String id) {
         return this.repository.findById(id).orElseThrow(
-                () -> new WebApplicationException("There is not item with the id " + id, Response.Status.NOT_FOUND));
+                () -> new WebApplicationException("There is no item with the id " + id, Response.Status.NOT_FOUND));
     }
 
     @POST
@@ -54,7 +54,7 @@ public class RestaurantController {
     public Item update(@PathParam("id") String id, @Valid Item item) {
         Item databaseItem = repository.findById(id)
                 .orElseThrow(
-                        () -> new WebApplicationException("There is not item with the id " + id, Response.Status.NOT_FOUND));
+                        () -> new WebApplicationException("There is no item with the id " + id, Response.Status.NOT_FOUND));
         databaseItem.update(item, repository);
         return databaseItem;
     }

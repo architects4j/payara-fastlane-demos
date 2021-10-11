@@ -26,9 +26,9 @@ class RestaurantRepositoryMemory implements RestaurantRepository {
 
     @Override
     public Item save(Item item) {
-        Objects.requireNonNull(item, "item is required");
+        Objects.requireNonNull(item, "An item is required");
         this.data.put(item.getName(), item);
-        LOGGER.info("The data has updated: " + item);
+        LOGGER.info("The data was updated: " + item);
         return item;
     }
 
