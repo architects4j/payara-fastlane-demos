@@ -12,7 +12,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.7</payaraVersion>
-        <final.name>microstream</final.name>
+        <final.name>restaurant</final.name>
     </properties>
     <dependencies>
         <dependency>
