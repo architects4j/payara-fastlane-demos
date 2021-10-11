@@ -6,6 +6,8 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import javax.json.bind.annotation.JsonbVisibility;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
@@ -18,6 +20,10 @@ import java.util.Objects;
 public class Ingredient {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column
     @Schema(required = true, name = "name", description = "The ingredient name", example = "water")
     @NotBlank
     @Size(min = 3, max = 20, message = "The name size should be between 3 and 10 chars")
@@ -32,6 +38,10 @@ public class Ingredient {
     @Schema(required = true, name = "quantity", description = "The ingredient quantity", example = "1")
     @PositiveOrZero(message = "a quantity cannot be negative")
     private double quantity;
+
+    public Long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

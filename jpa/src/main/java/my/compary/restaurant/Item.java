@@ -10,8 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -32,10 +30,6 @@ import java.util.Objects;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column
     @Schema(required = true, name = "name", description = "The item name", example = "water")
     @NotBlank
     @Size(min = 3, max = 20, message = "The name size should be between 3 and 10 chars")
