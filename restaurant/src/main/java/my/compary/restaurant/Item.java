@@ -17,7 +17,7 @@ import java.util.Objects;
 public class Item {
 
     @NotBlank
-    @Size(min = 3, max = 10, message = "The name size should be between 3 and 10 chars")
+    @Size(min = 3, max = 20, message = "The name size should be between 3 and 10 chars")
     private String name;
 
     @NotBlank
