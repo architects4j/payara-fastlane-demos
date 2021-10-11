@@ -3,6 +3,7 @@ package my.compary.jwt.secure;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
+import javax.enterprise.inject.Vetoed;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Map;
 /**
  * Represent the MP Auth token
  */
-
+@Vetoed
 public class MPJWTToken {
 
     private String iss; // issuer
