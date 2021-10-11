@@ -46,6 +46,7 @@ public class Item {
     @NotNull
     private LocalDate expires;
 
+    @Column
     @NotNull
     @Size(min = 1, message = "There should be at least one ingredient")
     @Schema(required = true, name = "ingredients", description = "The ingredients")
