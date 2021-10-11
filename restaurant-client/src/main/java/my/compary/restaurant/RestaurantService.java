@@ -14,7 +14,7 @@ import java.util.Collection;
 
 @Path("restaurants")
 @RegisterRestClient
-public interface RestaurantController {
+public interface RestaurantService {
     @GET
     Collection<Item> getAll();
 
