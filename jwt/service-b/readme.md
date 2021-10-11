@@ -6,11 +6,13 @@ MicroProfile Starter has generated this MicroProfile application for you contain
 
 The generation of the executable jar file can be performed by issuing the following command
 
+```
     mvn clean package
-
+```
 This will create an executable jar file **jwt-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
+```
     java -jar target/jwt-microbundle.jar --port 8180
-
+```
 
 
 ## Specification examples
