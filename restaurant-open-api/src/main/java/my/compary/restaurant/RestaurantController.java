@@ -1,8 +1,10 @@
 package my.compary.restaurant;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
@@ -64,7 +66,9 @@ public class RestaurantController {
     @APIResponse(description = "The Item",
             content = @Content(mediaType = MediaType.APPLICATION_JSON,
                     schema = @Schema(implementation = Item.class)))
-    public Item findById(@PathParam("id") String id) {
+    public Item findById(@Parameter(description = "The item ID", required = true, example = "water",
+            schema = @Schema(type = SchemaType.STRING))
+                         @PathParam("id") String id) {
         return this.repository.findById(id).orElseThrow(
                 () -> new WebApplicationException("There is no item with the id " + id, Response.Status.NOT_FOUND));
     }
