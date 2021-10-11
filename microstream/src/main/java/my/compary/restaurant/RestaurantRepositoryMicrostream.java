@@ -2,14 +2,13 @@ package my.compary.restaurant;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Collection;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-public class RestaurantRepositoryJPA  implements RestaurantRepository {
+public class RestaurantRepositoryMicrostream implements RestaurantRepository {
 
-    private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryJPA.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryMicrostream.class.getName());
 
     @Override
     public Collection<Item> getAll() {
