@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>my.compary</groupId>
-    <artifactId>restaurant</artifactId>
+    <artifactId>restaurant-open-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <properties>
@@ -12,7 +12,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>11</maven.compiler.source>
         <payaraVersion>5.2021.1</payaraVersion>
-        <final.name>restaurant</final.name>
+        <final.name>restaurant-open-api</final.name>
     </properties>
     <dependencies>
         <dependency>
