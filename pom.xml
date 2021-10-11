@@ -11,5 +11,6 @@
     <module>cdi</module>
     <module>restaurant</module>
     <module>restaurant-open-api</module>
+    <module>restaurant-client</module>
   </modules>
 </project>
