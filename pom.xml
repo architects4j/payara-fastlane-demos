@@ -13,5 +13,6 @@
     <module>restaurant-open-api</module>
     <module>restaurant-client</module>
     <module>jwt</module>
+    <module>config</module>
   </modules>
 </project>
