@@ -11,35 +11,24 @@ public class RestaurantRepositoryJPA  implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryJPA.class.getName());
 
-
-
     @Override
     public Collection<Item> getAll() {
-        return super.findAll();
+        return null;
     }
 
     @Override
     public Item save(Item item) {
-        Objects.requireNonNull(item, "An item is required");
-        Optional<Item> itemOptional = findById(item.getName());
-        if (itemOptional.isPresent()) {
-            getEntityManager().merge(item);
-        } else {
-            getEntityManager().persist(item);
-        }
-        LOGGER.info("The data was updated: " + item);
-        return item;
+        return null;
     }
 
     @Override
     public Optional<Item> findById(String id) {
         LOGGER.info("Finding the item by id: " + id);
-        return Optional.ofNullable(super.find(id));
+        return null;
     }
 
     @Override
     public void deleteById(String id) {
         Optional<Item> item = findById(id);
-        item.ifPresent((i) -> super.remove(i));
     }
 }
