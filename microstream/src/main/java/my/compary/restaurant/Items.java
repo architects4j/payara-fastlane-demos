@@ -1,6 +1,7 @@
 package my.compary.restaurant;
 
 import javax.enterprise.inject.Vetoed;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -13,6 +14,10 @@ public class Items {
     public void add(Item item) {
         Objects.requireNonNull(item, "item is required");
         this.data.add(item);
+    }
+
+    public Set<Item> getData() {
+        return Collections.unmodifiableSet(data);
     }
 
     @Override
