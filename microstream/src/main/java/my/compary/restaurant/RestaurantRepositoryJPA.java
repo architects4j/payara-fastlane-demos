@@ -1,34 +1,17 @@
 package my.compary.restaurant;
 
-import my.compary.restaurant.infra.AbstractFacade;
-
-import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-@Stateless
-public class RestaurantRepositoryJPA extends AbstractFacade<Item> implements RestaurantRepository {
+@ApplicationScoped
+public class RestaurantRepositoryJPA  implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryJPA.class.getName());
 
-    @PersistenceContext(unitName = "JPADatasourceExamplePU")
-    private EntityManager entityManager;
 
-    public RestaurantRepositoryJPA() {
-        super(Item.class);
-    }
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return entityManager;
-    }
 
     @Override
     public Collection<Item> getAll() {
