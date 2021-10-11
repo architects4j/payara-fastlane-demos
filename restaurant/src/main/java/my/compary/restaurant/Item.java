@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,6 +42,7 @@ public class Item {
         this.expires = item.expires;
         this.type = item.type;
         this.name = item.name;
+        this.ingredients = item.ingredients;
         repository.save(item);
     }
 
@@ -59,6 +61,14 @@ public class Item {
     public LocalDate getExpires() {
         return expires;
     }
+
+    public List<Ingredient> getIngredients() {
+        if(Objects.isNull(this.ingredients)) {
+            return Collections.emptyList();
+        }
+        return this.ingredients;
+    }
+
 
     @Override
     public boolean equals(Object o) {
