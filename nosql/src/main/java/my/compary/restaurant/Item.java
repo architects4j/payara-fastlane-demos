@@ -1,19 +1,13 @@
 package my.compary.restaurant;
 
 
+import jakarta.nosql.mapping.Column;
+import jakarta.nosql.mapping.Entity;
+import jakarta.nosql.mapping.Id;
 import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbVisibility;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -42,18 +36,16 @@ public class Item {
     private String description;
 
     @Column
-    @Enumerated(EnumType.STRING)
     @Schema(required = true, name = "type", description = "The type name", example = "BEVERAGE")
     @NotNull(message = "Fill up it with either BEVERAGE or FOOD")
     private ItemType type;
 
-    @Column(columnDefinition = "DATE")
+    @Column
     @Schema(required = true, name = "expires", description = "When the item expires", example = "2025-12-03")
     @Future(message = "It is not possible to save an expired item")
     @NotNull
     private LocalDate expires;
 
-    @OneToMany(cascade= CascadeType.ALL)
     @NotNull
     @Size(min = 1, message = "There should be at least one ingredient")
     @Schema(required = true, name = "ingredients", description = "The ingredients")
