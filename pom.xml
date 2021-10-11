@@ -14,5 +14,6 @@
     <module>restaurant-client</module>
     <module>jwt</module>
     <module>config</module>
+    <module>jpa</module>
   </modules>
 </project>
