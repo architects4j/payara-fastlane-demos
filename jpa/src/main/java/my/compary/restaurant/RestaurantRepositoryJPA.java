@@ -13,9 +13,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-@ApplicationScoped
 @Stateless
-class RestaurantRepositoryJPA extends AbstractFacade<Item> implements RestaurantRepository {
+public class RestaurantRepositoryJPA extends AbstractFacade<Item> implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryJPA.class.getName());
 

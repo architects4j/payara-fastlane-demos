@@ -5,10 +5,13 @@ import my.compary.restaurant.infra.FieldPropertyVisibilityStrategy;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbVisibility;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -29,6 +32,10 @@ import java.util.Objects;
 public class Item {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column
     @Schema(required = true, name = "name", description = "The item name", example = "water")
     @NotBlank
     @Size(min = 3, max = 20, message = "The name size should be between 3 and 10 chars")
@@ -46,15 +53,13 @@ public class Item {
     @NotNull(message = "Fill up it with either BEVERAGE or FOOD")
     private ItemType type;
 
-    @Column
-    @Temporal(TemporalType.DATE)
+    @Column(columnDefinition = "DATE")
     @Schema(required = true, name = "expires", description = "When the item expires", example = "2025-12-03")
     @Future(message = "It is not possible to save an expired item")
     @NotNull
     private LocalDate expires;
 
-    @Column
-    @OneToMany(mappedBy="ingredients")
+    @OneToMany(cascade= CascadeType.ALL)
     @NotNull
     @Size(min = 1, message = "There should be at least one ingredient")
     @Schema(required = true, name = "ingredients", description = "The ingredients")
