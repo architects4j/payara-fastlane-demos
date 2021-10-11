@@ -13,10 +13,9 @@ import java.nio.file.Paths;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-class EmbeddedStorageManagerProducer {
+class StorageManagerProducer {
 
-
-    private static final Logger LOGGER = Logger.getLogger(EmbeddedStorageManagerProducer.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(StorageManagerProducer.class.getName());
 
     @Inject
     @ConfigProperty(name = "microstream.path")
