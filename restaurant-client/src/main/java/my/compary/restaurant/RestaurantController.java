@@ -1,5 +1,7 @@
 package my.compary.restaurant;
 
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
 import javax.validation.Valid;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -11,6 +13,7 @@ import javax.ws.rs.core.Response;
 import java.util.Collection;
 
 @Path("restaurants")
+@RegisterRestClient
 public interface RestaurantController {
     @GET
     Collection<Item> getAll();
