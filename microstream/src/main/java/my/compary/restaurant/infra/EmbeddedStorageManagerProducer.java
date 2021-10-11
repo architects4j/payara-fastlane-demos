@@ -1,9 +1,8 @@
-package my.compary.restaurant.db;
+package my.compary.restaurant.infra;
 
 import my.compary.restaurant.Items;
 import one.microstream.storage.embedded.types.EmbeddedStorage;
 import one.microstream.storage.embedded.types.EmbeddedStorageManager;
-import org.eclipse.microprofile.config.inject.ConfigProperties;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -26,7 +25,7 @@ class EmbeddedStorageManagerProducer {
     @Produces
     @ApplicationScoped
     EmbeddedStorageManager getEmbeddedStorageManager() {
-        LOGGER.info("Starting EmbeddedStorageManager connection");
+        LOGGER.info("Starting EmbeddedStorageManager connection, the path: " + path);
         final Items root = new Items();
         final EmbeddedStorageManager storageManager = EmbeddedStorage.start(
                 root, Paths.get(path)
