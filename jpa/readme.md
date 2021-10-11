@@ -10,9 +10,26 @@ The generation of the executable jar file can be performed by issuing the follow
 ```
 This will create an executable jar file **restaurant-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
 
+
+```shell
+mvn clean package
+java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.user=postgres -Dserver.password=password target/restaurant-microbundle.jar 
 ```
-    java -jar target/restaurant-microbundle.jar
-```
+
+
+## Using Docker
+
+![Docker](https://www.docker.com/sites/default/files/horizontal_large.png)
+
+1. Install docker: https://www.docker.com/
+1. https://hub.docker.com/_/postgres
+1. Run docker command
+1. Run PostgreSQL: verify PostgreSQL image name with the command `docker images`, it can be mongodb or mongo, and then execute this command:
+    * `docker run --name postgres-instance -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fishes -d postgres`
+
+![Database](https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png)
+
+
 
 To execute the tests:
 
