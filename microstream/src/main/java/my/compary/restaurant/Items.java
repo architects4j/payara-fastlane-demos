@@ -4,6 +4,7 @@ import javax.enterprise.inject.Vetoed;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 @Vetoed
@@ -18,6 +19,16 @@ public class Items {
 
     public Set<Item> getData() {
         return Collections.unmodifiableSet(data);
+    }
+
+    public Optional<Item> findById(String id) {
+        Objects.requireNonNull(id, "id is required");
+        return data.stream().filter(i -> i.getName().equals(id)).findFirst();
+    }
+
+    public void deleteById(String id) {
+        Objects.requireNonNull(id, "id is required");
+        this.data.removeIf(i -> i.getName().equals(id));
     }
 
     @Override
@@ -43,4 +54,5 @@ public class Items {
                 "data=" + data +
                 '}';
     }
+
 }
