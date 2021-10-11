@@ -1,16 +1,19 @@
 package my.compary.restaurant;
 
-import my.compary.restaurant.Item;
-
-import java.util.ArrayList;
+import javax.enterprise.inject.Vetoed;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Vetoed
 public class Items {
 
     private Set<Item> data = new HashSet<>();
+
+    public void add(Item item) {
+        Objects.requireNonNull(item, "item is required");
+        this.data.add(item);
+    }
 
     @Override
     public boolean equals(Object o) {
