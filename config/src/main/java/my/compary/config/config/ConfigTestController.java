@@ -20,7 +20,7 @@ public class ConfigTestController {
     @Path("/injected")
     @GET
     public String getInjectedConfigValue() {
-        return "Config value as Injected by CDI " + injectedValue;
+        return "Config value as Injected by CDI: " + injectedValue;
     }
 
     @Path("/lookup")
@@ -28,6 +28,6 @@ public class ConfigTestController {
     public String getLookupConfigValue() {
         Config config = ConfigProvider.getConfig();
         String value = config.getValue("value", String.class);
-        return "Config value from ConfigProvider " + value;
+        return "Config value from ConfigProvider: " + value;
     }
 }
