@@ -1,14 +1,12 @@
 package my.compary.restaurant;
 
+import jakarta.nosql.mapping.Repository;
+
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Collection;
-import java.util.Optional;
 
-public interface RestaurantRepository {
-    Collection<Item> getAll();
+@ApplicationScoped
+public interface RestaurantRepository extends Repository<Item, String> {
 
-    Item save(Item item);
-
-    Optional<Item> findById(String id);
-
-    void deleteById(String id);
+    Collection<Item> findAll();
 }

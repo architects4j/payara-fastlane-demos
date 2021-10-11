@@ -53,7 +53,7 @@ public class RestaurantController {
                             readOnly = true, description = "the items",
                             required = true, name = "items")))
     public Collection<Item> getAll() {
-        return repository.getAll();
+        return repository.findAll();
     }
 
     @GET
