@@ -13,7 +13,7 @@ This will create an executable jar file **restaurant-microbundle.jar** within th
 
 ```shell
 mvn clean package
-java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.user=postgres -Dserver.password=password target/restaurant-microbundle.jar 
+java -jar -Xmx512m target/restaurant-microbundle.jar 
 ```
 
 
@@ -24,8 +24,8 @@ java -jar -Xmx512m -Dserver.host=localhost -Dserver.database=fishes -Dserver.use
 1. Install docker: https://www.docker.com/
 1. https://hub.docker.com/_/postgres
 1. Run docker command
-1. Run PostgreSQL: verify PostgreSQL image name with the command `docker images`, it can be mongodb or mongo, and then execute this command:
-    * `docker run --name postgres-instance -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fishes -d postgres`
+1. Run MongoDB: verify MongoDB image name with the command `docker images`, it can be mongodb or mongo, and then execute this
+    * `docker run -d --name mongodb-instance -p 27017:27017 mongo`
 
 ![Database](https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png)
 
