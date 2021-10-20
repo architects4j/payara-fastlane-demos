@@ -4,12 +4,12 @@ import javax.enterprise.event.Observes;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
 
-public class SocialMedia implements Consumer<News> {
+public class PrimeMedia implements Consumer<News> {
 
-    private static final Logger LOGGER = Logger.getLogger(SocialMedia.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(PrimeMedia.class.getName());
 
     @Override
-    public void accept(@Observes News news) {
-        LOGGER.info("We got the news, we'll publish it on Social Media: " + news.get());
+    public void accept(@Observes @PrimeNews News news) {
+        LOGGER.info("This news is exclusive to the prime readers: " + news.get());
     }
 }
