@@ -11,14 +11,14 @@ public class Journalist {
     private Event<News> event;
 
     @Inject
-    @PrimeNews
-    private Event<News> primeEvent;
+    @Specific
+    private Event<News> specificEvent;
 
     public void receiveNews(News news) {
         this.event.fire(news);
     }
 
-    public void primeNews(News news) {
-        this.primeEvent.fire(news);
+    public void specificNews(News news) {
+        this.specificEvent.fire(news);
     }
 }

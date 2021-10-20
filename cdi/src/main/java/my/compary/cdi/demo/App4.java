@@ -13,7 +13,7 @@ public class App4 {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             Journalist journalist = container.select(Journalist.class).get();
             journalist.receiveNews(News.of("Java 17 has arrived!!"));
-            journalist.primeNews(News.of("That is a exclusive interview of the spec leader of Java 17"));
+            journalist.specificNews(News.of("That is a exclusive interview of the spec leader of Java 17"));
         }
     }
 }
