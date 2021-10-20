@@ -1,11 +1,10 @@
 package my.compary.cdi.demo;
 
 import my.compary.cdi.demo.news.Journalist;
-import my.compary.cdi.demo.producer.NumberLogger;
+import my.compary.cdi.demo.news.News;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
-import java.math.BigDecimal;
 
 public class App4 {
 
@@ -13,7 +12,8 @@ public class App4 {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             Journalist journalist = container.select(Journalist.class).get();
-            journalist.receiveNews("Java 17 has arrived!!");
+            journalist.receiveNews(News.of("Java 17 has arrived!!"));
+            journalist.primeNews(News.of("That is a exclusive interview of the spec leader of Java 17"));
         }
     }
 }
