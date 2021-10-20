@@ -8,9 +8,9 @@ import javax.inject.Inject;
 public class Journalist {
 
     @Inject
-    private Event<String> event;
+    private Event<News> event;
 
-    public void receiveNews(String news) {
+    public void receiveNews(News news) {
          this.event.fire(news);
     }
 }
