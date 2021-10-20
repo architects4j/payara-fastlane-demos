@@ -14,6 +14,6 @@ public class SlowSupplier implements Supplier<String> {
             //TODO it is only a sample, don't do it on production :)
             throw  new RuntimeException(e);
         }
-        return "The result";
+        return "The slow result";
     }
 }

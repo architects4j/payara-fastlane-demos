@@ -7,6 +7,6 @@ public class FastSupplier implements Supplier<String> {
     @Timed
     @Override
     public String get() {
-        return "The result";
+        return "The Fast supplier result";
     }
 }
