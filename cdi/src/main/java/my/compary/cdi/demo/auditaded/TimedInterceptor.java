@@ -1,5 +1,6 @@
 package my.compary.cdi.demo.auditaded;
 
+import javax.annotation.Priority;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
@@ -7,6 +8,7 @@ import java.util.logging.Logger;
 
 @Timed
 @Interceptor
+@Priority(Interceptor.Priority.APPLICATION)
 public class TimedInterceptor {
 
     private static final Logger LOGGER = Logger.getLogger(TimedInterceptor.class.getName());
