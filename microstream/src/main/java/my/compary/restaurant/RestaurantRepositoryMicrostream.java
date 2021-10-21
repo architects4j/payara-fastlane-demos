@@ -1,6 +1,6 @@
 package my.compary.restaurant;
 
-import one.microstream.storage.embedded.types.EmbeddedStorageManager;
+import one.microstream.storage.types.StorageManager;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -14,7 +14,7 @@ public class RestaurantRepositoryMicrostream implements RestaurantRepository {
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryMicrostream.class.getName());
 
     @Inject
-    private EmbeddedStorageManager manager;
+    private StorageManager manager;
 
     @Inject
     private Items items;
