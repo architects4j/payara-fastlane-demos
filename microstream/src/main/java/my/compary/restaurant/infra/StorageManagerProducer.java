@@ -11,6 +11,7 @@ import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 @ApplicationScoped
@@ -24,10 +25,14 @@ class StorageManagerProducer {
 
     @Produces
     @ApplicationScoped
-    StorageManager getEmbeddedStorageManager() {
-        LOGGER.info("Starting EmbeddedStorageManager connection, the path: " + path);
+    StorageManager getStorageManager() {
+        LOGGER.info("Starting StorageManager connection, the path: " + path);
         final EmbeddedStorageManager storageManager = EmbeddedStorage.start(Paths.get(path));
-
+        Object root = storageManager.root();
+        if (Objects.isNull(root)) {
+            LOGGER.info("Starting the root");
+            storageManager.setRoot(new Items());
+        }
         return storageManager;
     }
 
