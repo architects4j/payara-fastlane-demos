@@ -3,6 +3,7 @@ package my.compary.restaurant.infra;
 import my.compary.restaurant.Items;
 import one.microstream.storage.embedded.types.EmbeddedStorage;
 import one.microstream.storage.embedded.types.EmbeddedStorageManager;
+import one.microstream.storage.types.StorageManager;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -23,22 +24,20 @@ class StorageManagerProducer {
 
     @Produces
     @ApplicationScoped
-    EmbeddedStorageManager getEmbeddedStorageManager() {
+    StorageManager getEmbeddedStorageManager() {
         LOGGER.info("Starting EmbeddedStorageManager connection, the path: " + path);
-        final Items root = new Items();
-        final EmbeddedStorageManager storageManager = EmbeddedStorage.start(
-                root, Paths.get(path)
-        );
+        final EmbeddedStorageManager storageManager = EmbeddedStorage.start(Paths.get(path));
+
         return storageManager;
     }
 
-    public void close(@Disposes EmbeddedStorageManager storageManager) {
+    public void close(@Disposes StorageManager storageManager) {
         LOGGER.info("Closing EmbeddedStorageManager connection");
         storageManager.close();
     }
 
     @Produces
-    public Items getItems(EmbeddedStorageManager storageManager) {
+    public Items getItems(StorageManager storageManager) {
         return (Items) storageManager.root();
     }
 }
