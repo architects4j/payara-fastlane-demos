@@ -1,6 +1,6 @@
 package my.compary.restaurant;
 
-import one.microstream.storage.types.StorageManager;
+import my.compary.restaurant.infra.UpdateRoot;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -13,8 +13,6 @@ public class RestaurantRepositoryMicrostream implements RestaurantRepository {
 
     private static final Logger LOGGER = Logger.getLogger(RestaurantRepositoryMicrostream.class.getName());
 
-    @Inject
-    private StorageManager manager;
 
     @Inject
     private Items items;
@@ -25,9 +23,9 @@ public class RestaurantRepositoryMicrostream implements RestaurantRepository {
     }
 
     @Override
+    @UpdateRoot
     public Item save(Item item) {
         this.items.add(item);
-        manager.storeRoot();
         return item;
     }
 
@@ -38,8 +36,8 @@ public class RestaurantRepositoryMicrostream implements RestaurantRepository {
     }
 
     @Override
+    @UpdateRoot
     public void deleteById(String id) {
         items.deleteById(id);
-        manager.storeRoot();
     }
 }
