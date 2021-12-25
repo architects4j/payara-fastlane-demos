@@ -1,6 +1,5 @@
 package my.compary.cdi.demo;
 
-import my.compary.cdi.demo.injection.MyServiceSample;
 import my.compary.cdi.demo.vehicle.Car;
 import my.compary.cdi.demo.vehicle.Vehicle;
 
