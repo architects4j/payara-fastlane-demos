@@ -27,10 +27,6 @@ java -jar -Xmx512m target/restaurant-microbundle.jar
 1. Run MongoDB: verify MongoDB image name with the command `docker images`, it can be mongodb or mongo, and then execute this
     * `docker run -d --name mongodb-instance -p 27017:27017 mongo`
 
-![Database](https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png)
-
-
-
 To execute the tests:
 
 ```
